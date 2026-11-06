@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My Magic Word Lab</h1>
+        <button onclick="gatType()">Get Type<button>
+        <div id="type"></div>
+        <h3>Switch the Type</h3>
+        <input id = "numIn" placeholder="Type any number">
+        <button onclick="toStr()">Convert1</button>
+        <button onclick="toNum()">Convert2</button>
+        <div id="display"></div>
+        <button onclick="search()">search</button>
+        <div id="searchRes"></div>
+        <script>
+           function getType(){
+            var score =100;
+            document.getElementById("type").innerText = "Typeof 42: " + typeof 42 + "\n" + // "number"
+            "Typeof Alex: " + typeof Alex + "\n" + // "string"
+            "Typeof Gameover: " + typeof true + "\n" + // "boolean"
+            "Typeof score: " + typeof score + "\n"  // "number"
+           }
+           function toStr(){
+            var v = document.getElementById("numIn").value 
+            document.getElementById("display").innerHTML= String(v) + "Now it is a"
+            + typeof v 
+           }
+    function toNum(){
+            var v = document.getElementById("numIn").value 
+            document.getElementById("display").innerHTML= Number(v) + "Now it is a"
+            + typeof Number(v) 
+           }
+    function search(){
+            var sentence = "The dragon flew over the big castle";
+            document.getElementById("searchRes").innerHTML= "Word found at position" + sentence.search("dragon") + "\n"    //4
+            sentence.search("Wizard") + "\n" 
+            + sentence.replace("dragon", "Wizard")
+           }
+           function trySafe(){
+            try {
+                var n = document.getElementById("divIn").value; 
+                if (n === "" || isNaN(n)) {throw "Not a number"; }
+                document.getElementById("errResult").innerHTML = 100 / Number(n) ;
+              } catch (err) {document.getElementById("errResult").innerHTML = err;}
+           }
+</script>
+</body>
+</html>
